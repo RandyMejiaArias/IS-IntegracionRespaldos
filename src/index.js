@@ -5,11 +5,10 @@ import { connectDB } from './libs/database.js';
 
 
 async function main() {
-  // await connectDB();
-  readFiles()
-  // await cron.schedule('*/10 * * * * *', async () => {
-    
-  // })
+  await connectDB();
+  cron.schedule('0 5 * * *', async () => {
+    readFiles()
+  })
 }
 
 main()
